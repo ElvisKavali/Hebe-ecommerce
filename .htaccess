@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /FCA/sharky/hebe-store/
+RewriteRule ^$ index.php [L]
+RewriteRule ^views/([A-Za-z0-9._-]+\.php)$ views/$1 [L]
+RewriteRule ^customer/([A-Za-z0-9._-]+\.php)$ customer/$1 [L]
+RewriteRule ^auth/([A-Za-z0-9._-]+\.php)$ auth/$1 [L]
+RewriteRule ^checkout/([A-Za-z0-9._-]+\.php)$ checkout/$1 [L]
+RewriteRule ^cart/([A-Za-z0-9._-]+\.php)$ cart/$1 [L]
+RewriteRule ^api/([A-Za-z0-9._-]+\.php)$ api/$1 [L]

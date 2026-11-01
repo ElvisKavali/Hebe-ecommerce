@@ -1,0 +1,47 @@
+/* HEBE Admin */
+:root{
+  --side-bg:#0b1220;
+  --side-text:#cbd5e1;
+  --side-active:#0D6EFD;
+  --content-bg:#f6f8fb;
+  --card-bg:#fff;
+  --border:#e6eaf0;
+  --text:#0f172a;
+  --muted:#64748b;
+}
+body.admin-body{font-family:'Inter',system-ui,sans-serif;margin:0;background:var(--content-bg);color:var(--text)}
+.admin-sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--side-bg);color:var(--side-text);padding:1.25rem 0;overflow:auto;transition:transform .3s}
+.admin-brand{padding:0 1.25rem 1rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:.75rem}
+.admin-brand a{color:#fff;font-weight:800;font-size:1.3rem;text-decoration:none}
+.admin-brand span{color:var(--side-active)}
+.admin-nav a{display:flex;align-items:center;gap:.6rem;padding:.7rem 1.25rem;color:var(--side-text);text-decoration:none;font-size:.92rem}
+.admin-nav a:hover{background:rgba(255,255,255,.04);color:#fff}
+.admin-nav a.active{background:var(--side-active);color:#fff}
+.admin-nav a i{width:18px}
+.admin-main{margin-left:240px;min-height:100vh;display:flex;flex-direction:column}
+.admin-topbar{display:flex;align-items:center;gap:.5rem;padding:.75rem 1.25rem;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.admin-content{flex:1}
+.stat-card{background:var(--card-bg);border:1px solid var(--border);border-radius:1rem;padding:1.25rem}
+.stat-card .label{color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em}
+.stat-card .value{font-size:1.7rem;font-weight:700;margin-top:.25rem}
+.stat-card .delta{font-size:.8rem;color:#157347}
+.admin-card{background:#fff;border:1px solid var(--border);border-radius:1rem}
+.admin-card .card-head{padding:1rem 1.25rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.admin-card .card-body-p{padding:1rem 1.25rem}
+.table-clean th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
+.badge-status{font-size:.72rem;padding:.3em .55em;border-radius:.4rem}
+.badge-status.pending{background:#fff3cd;color:#8a6d3b}
+.badge-status.confirmed,.badge-status.processing,.badge-status.packed,.badge-status.shipped{background:#dbeafe;color:#1e40af}
+.badge-status.delivered,.badge-status.paid{background:#d1e7dd;color:#157347}
+.badge-status.cancelled,.badge-status.failed{background:#f8d7da;color:#842029}
+.badge-status.returned,.badge-status.refunded{background:#e2e3e5;color:#41464b}
+
+@media (max-width: 991.98px){
+  .admin-sidebar{transform:translateX(-100%);z-index:1050;box-shadow:var(--shadow)}
+  .admin-sidebar.open{transform:translateX(0)}
+  .admin-main{margin-left:0}
+}
+body.dark{background:#0b1220;color:#e5e7eb}
+body.dark .admin-card,body.dark .stat-card,body.dark .admin-topbar{background:#111a2c;color:#e5e7eb;border-color:#1f2a44}
+body.dark .table{color:#e5e7eb}
+body.dark .table-clean th{color:#9aa4b8}
